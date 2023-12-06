@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/dist/css/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../dist/css/monolith.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body class="bg-zinc-50 dark:bg-zinc-950 w-[310px] p-5">
+    <main>
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <img src="/src/Icons/icon16_enabled.png" alt="Logo" />
+          <h1 class="text-zinc-900 dark:text-zinc-300 font-semibold text-base"> EasyGrids for Elementor </h1>
+        </div>
+        <button id="open-menu-button">
+          <i class="fa-solid fa-bars fa-xl text-zinc-800 dark:text-zinc-300"></i>
+        </button>
+      </div>
+      <div class="divider"></div>
+      <div class="flex items-center justify-between">
+        <span class="text-zinc-800 dark:text-zinc-300 font-medium text-sm"> Layout Grid </span>
+        <div class="container">
+          <input type="checkbox" class="checkbox switch-layout-grid" id="switch-layout-grid" />
+          <label class="switch" for="switch-layout-grid">
+            <span class="slider dark:bg-zinc-900"></span>
+          </label>
+        </div>
+      </div>
+      <span class="text-zinc-500 dark:text-zinc-400 font-normal text-xs"> Use "Command/Ctrl+Shift+S".</span>
+      <div class="divider"></div>
+      <div class="flex flex-col gap-2">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-1">
+            <label for="z-index" class="cursor-text text-zinc-800 dark:text-zinc-300 font-medium text-sm"> Grid Color: </label>
+            <p>
+              <span class="tooltip cursor-help text-zinc-800 text-xs font-normal" data-tooltip="Set the color for the grid lines." data-tooltip-pos="right" data-tooltip-length="medium">
+                <i class="fa-regular fa-circle-question text-zinc-500 dark:text-zinc-400"></i>
+              </span>
+            </p>
+          </div>
+          <div>
+            <div class="flex gap-2">
+              <div class="color-picker"></div>
+              <input type="text" id="grid-color-input" maxlength="9" class="input" />
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-1">
+            <label for="z-index" class="cursor-text text-zinc-800 dark:text-zinc-300 font-medium text-sm"> Z-index: </label>
+            <p>
+              <span class="tooltip cursor-help text-zinc-800 text-xs font-normal" data-tooltip="Define the z-index for the grid layout." data-tooltip-pos="right" data-tooltip-length="medium">
+                <i class="fa-regular fa-circle-question text-zinc-500 dark:text-zinc-400"></i>
+              </span>
+            </p>
+          </div>
+          <div>
+            <input type="number" id="z-index-input" class="input" />
+          </div>
+        </div>
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-1">
+            <label for="z-index" class="cursor-text text-zinc-800 dark:text-zinc-300 font-medium text-sm"> Columns: </label>
+            <p>
+              <span class="tooltip cursor-help text-zinc-800 text-xs font-normal" data-tooltip="Specify the number of columns in the grid." data-tooltip-pos="right" data-tooltip-length="medium">
+                <i class="fa-regular fa-circle-question text-zinc-500 dark:text-zinc-400"></i>
+              </span>
+            </p>
+          </div>
+          <div>
+            <input type="number" id="columns-input" class="input" />
+          </div>
+        </div>
+        <div class="flex flex-col gap-1">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-1">
+              <label for="z-index" class="cursor-text text-zinc-800 dark:text-zinc-300 font-medium text-sm"> Max-width: </label>
+              <p>
+                <span class="tooltip cursor-help text-zinc-800 text-xs font-normal" data-tooltip="Set the maximum width of the grid layout (in pixels)." data-tooltip-pos="right" data-tooltip-length="medium">
+                  <i class="fa-regular fa-circle-question text-zinc-500 dark:text-zinc-400"></i>
+                </span>
+              </p>
+            </div>
+            <span class="selected text-zinc-500 dark:text-zinc-400 mr-2">px</span>
+          </div>
+          <div>
+            <div class="flex items-center justify-between gap-5">
+              <input type="range" min="0" max="3000" value="1" id="max-width-range-input" class="range-input" />
+              <input type="number" id="max-width-input" class="input" />
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col gap-1">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-1">
+              <label for="z-index" class="cursor-text text-zinc-800 dark:text-zinc-300 font-medium text-sm"> Offset: </label>
+              <p>
+                <span class="tooltip cursor-help text-zinc-800 text-xs font-normal" data-tooltip="Adjust the space between the grid and its container's edge (in pixels)." data-tooltip-pos="right" data-tooltip-length="medium">
+                  <i class="fa-regular fa-circle-question text-zinc-500 dark:text-zinc-400"></i>
+                </span>
+              </p>
+            </div>
+            <span class="selected text-zinc-500 dark:text-zinc-400 mr-2">px</span>
+          </div>
+          <div>
+            <div class="flex items-center justify-between gap-5">
+              <input type="range" min="0" max="1000" id="offset-range-input" class="range-input" />
+              <input type="number" id="offset-input" class="input" />
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col gap-1">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-1">
+              <label for="z-index" class="cursor-text text-zinc-800 dark:text-zinc-300 font-medium text-sm"> Gutter: </label>
+              <p>
+                <span class="tooltip cursor-help text-zinc-800 text-xs font-normal" data-tooltip="Adjust the space between columns in the grid (in pixels)." data-tooltip-pos="right" data-tooltip-length="medium">
+                  <i class="fa-regular fa-circle-question text-zinc-500 dark:text-zinc-400"></i>
+                </span>
+              </p>
+            </div>
+            <span class="selected text-zinc-500 dark:text-zinc-400 mr-2">px</span>
+          </div>
+          <div>
+            <div class="flex items-center justify-between gap-5">
+              <input type="range" min="0" max="200" id="gutter-range-input" class="range-input" />
+              <input type="number" id="gutter-input" class="input" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="relative">
+        <div class="availability-content before:content-[''] text-zinc-800 dark:text-zinc-800 font-medium text-sm bg-red-100 rounded-r-sm p-3 before:w-[3px] before:h-full before:top-0 before:left-0 before:absolute before:0 before:bg-red-500">
+          <span class="availability-text">The Layout Grid is available only on Elementor editor and preview pages.</span>
+        </div>
+      </div>
+    </main>
+    <section id="menu-container" class="hidden">
+      <div id="menu-opacity" class="bg-black opacity-70 w-full h-full absolute top-0 right-0"></div>
+      <div id="menu-settings" class="bg-white dark:bg-zinc-950 w-[85%] h-full absolute top-0 right-0 p-5 flex flex-col justify-between">
+        <div>
+          <div class="flex items-center justify-between">
+            <button id="close-menu-button">
+              <i class="dark:text-neutral-100 fa-solid fa-xmark fa-xl"></i>
+            </button>
+            <span class="text-neutral-800 dark:text-neutral-100 font-semibold text-base">EasyGrids Settings</span>
+          </div>
+          <div class="divider"></div>
+          <div class="flex items-center justify-between">
+            <span class="text-zinc-800 dark:text-zinc-300 font-medium text-sm">Light/Dark mode</span>
+            <div class="container">
+              <input type="checkbox" class="checkbox switch-theme-color" id="switch-theme-color" />
+              <label class="switch" for="switch-theme-color">
+                <span class="slider dark:bg-zinc-900"></span>
+              </label>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <span class="text-zinc-500 dark:text-zinc-400 font-normal text-xs">EasyGrids simplifies Elementor design by adding seamless grid layout functionality. Say goodbye to third-party plugins.</span>
+          <div class="divider"></div>
+          <span class="text-zinc-500 dark:text-zinc-400 font-normal text-xs">This extension is free, and your data is stored locally on Chrome. No account is needed.</span>
+          <div class="divider"></div>
+          <span class="text-zinc-500 dark:text-zinc-300 font-normal text-xs">Developed by: <a class="text-[#976bfd] hover:text-[#814EFA] visited:text-[#814EFA]" href="https://instagram.com/gabrieldesigner.io" target="_blank" rel="noopener noreferrer">gabrieldesigner.io</a>
+          </span>
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <img src="icons/icon16_enabled.png" alt="Logo" />
+            <h1 class=" text-zinc-800 dark:text-zinc-300 font-medium text-sm"> EasyGrids for Elementor </h1>
+          </div>
+        </div>
+    </section>
+    <script src="../dist/js/pickr.min.js"></script>
+    <script src="js/popup.js"></script>
+    <script src="js/options.js"></script>
+  </body>
+</html>
